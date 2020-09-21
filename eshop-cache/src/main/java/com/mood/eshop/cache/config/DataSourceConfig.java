@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  * @date 2020/8/5 21:28
  * @email 371428187@qq.com
  */
-@Configuration
+//@Configuration
 public class DataSourceConfig {
     @Bean
     @ConfigurationProperties(prefix="spring.datasource")

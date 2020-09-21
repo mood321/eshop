@@ -1,5 +1,8 @@
 package com.mood.eshop.cache.config;
 
+import com.mood.eshop.cache.listenter.InitListenter;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -9,6 +12,12 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class WebConfig {
-    
+    @Bean
+    public ServletListenerRegistrationBean servletListenerRegistrationBean() {
+        ServletListenerRegistrationBean servletListenerRegistrationBean =
+                new ServletListenerRegistrationBean();
+        servletListenerRegistrationBean.setListener(new InitListenter());
+        return servletListenerRegistrationBean;
+    }
 
 }

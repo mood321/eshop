@@ -3,12 +3,12 @@
 
 <mapper namespace="com.mood.eshop.inventory.mapper.ProductInventoryMapper">
  
-  	<update id="updateInventoryCnt" parameterType="com.mood.eshop.cache.model.ProductInventory">
+  	<update id="updateInventoryCnt" parameterType="com.mood.eshop.cache.model.ProductInfo">
 
 		  	update product_inventory set inventory_cnt=#{productInventory} where product_id=#{productId}
 	</update>
 
-	<select id="findProductInventory" resultType="com.mood.eshop.cache.model.ProductInventory">
+	<select id="findProductInventory" resultType="com.mood.eshop.cache.model.ProductInfo">
 		select product_id as "productId",inventory_cnt as "productInventory" from product_inventory where product_id=#{productId}
 		
 	</select>
